@@ -1,0 +1,11 @@
+<h3>New Image</h3>
+
+<%= form_for @image, url: admin_images_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+  
+  <%= f.submit 'Create Image' %>
+<% end %>

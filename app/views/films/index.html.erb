@@ -1,0 +1,13 @@
+<%= flash[:notice] %>
+<%= flash[:error] %>
+
+<h5>Welcome, <%= current_user.username %></h5>
+
+<% @films.each do |film| %>
+  <div class='film'>
+    <h5> <%= link_to film.title, film_path(film) %> </h5>
+    <p> <%= film.description %> </p>
+  </div>
+<% end %>
+
+<%= link_to "Create Film", new_film_path %>

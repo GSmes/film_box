@@ -7,8 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="blue lighten-2">
+    <div class="container">
+      <%= link_to 'Film Box', root_path, class: 'brand-logo' %>
+      <ul class="right">
+        <% if current_admin %>
+          <li><%= link_to 'Add Image', new_admin_image_path %></li>
+          <li><%= link_to 'Add Genre', new_admin_genre_path %></li>
+        <% end %>
 
-<%= yield %>
+        <% if current_user %>
+          <li><%= link_to 'My Films', films_path %></li>
+          <li><%= link_to 'Logout', logout_path, method: :delete%></li>
+        <% else %>
+          <li><%= link_to 'Login', login_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+
+  <%= yield %>
+
+</div>
 
 </body>
 </html>

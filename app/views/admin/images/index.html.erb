@@ -1,0 +1,9 @@
+<h1>All Images</h1>
+
+<ul>
+<% @images.each do |image| %>
+  <li> <%= link_to image.name, admin_image_path(image) %> </li>
+<% end %>
+</ul>
+
+<%= link_to 'Add Image', new_admin_image_path %>

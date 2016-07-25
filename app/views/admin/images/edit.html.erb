@@ -1,0 +1,11 @@
+<h3>Edit Image</h3>
+
+<%= form_for @image, url: admin_image_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+
+  <%= f.submit 'Submit' %>
+<% end %>

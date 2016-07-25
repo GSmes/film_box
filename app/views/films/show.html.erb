@@ -1,0 +1,14 @@
+<h3><%= @film.title %></h3>
+
+<div>
+  <% @film.images.each do |image| %>
+    <img src="<%=image.link%>" alt='<%= image.name %>' class='film_image z-depth-3'/>
+  <% end %>
+</div>
+
+<p> <%= @film.description %></p>
+
+<%= link_to 'Add Image', new_film_image_path(@film), class: 'btn blue' %>
+<%= link_to 'Edit', edit_film_path(@film), class: 'btn orange'%>
+<%= link_to 'Delete', film_path(@film), method: :delete, class: 'btn red' %>
+<br><br>

@@ -1,0 +1,14 @@
+<%= flash[:error] %>
+
+<%= form_for @film do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :genre_id, "Genre" %>
+  <%= f.collection_select :genre_id, Genre.all, :id, :name, {}, {class: 'browser-default'}%>
+
+  <%= f.submit "Submit" %>
+<% end %>
