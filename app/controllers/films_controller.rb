@@ -13,7 +13,7 @@ class IdeasController < ApplicationController
   def create
     @film = @user.films.new(film_params)
     if @film.save
-      flash[:notice] = "Successfully created film!"
+      flash[:notice] = "Successfully Created Film!"
       redirect_to @film
     else
       flash[:error] = @film.errors.full_messages.join(', ')
@@ -26,7 +26,7 @@ class IdeasController < ApplicationController
 
   def destroy
     @film.destroy
-    flash[:notice] = "Successfully deleted film"
+    flash[:notice] = "Successfully Deleted Film"
     redirect_to films_path
   end
 
@@ -35,7 +35,7 @@ class IdeasController < ApplicationController
 
   def update
     if @film.update(film_params)
-      flash[:notice] = "Successfully updated film!"
+      flash[:notice] = "Successfully Updated Film!"
       redirect_to @film
     else
       flash[:error] = @film.errors.full_messages.join(', ')
