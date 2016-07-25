@@ -25,7 +25,7 @@ class FilmShowTest < ActionDispatch::IntegrationTest
   end
 
   def create_film
-    @admin.films.create(title: 'The Departed', description: 'So much death')
+    @user.films.create(title: 'The Departed', description: 'So much death')
   end
 
 end

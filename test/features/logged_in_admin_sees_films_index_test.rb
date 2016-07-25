@@ -7,9 +7,7 @@ class AdminFilmIndexTest < ActionDispatch::IntegrationTest
     create_film
 
     visit films_path
-    within '.film' do
-      assert page.has_content?("The Departed")
-    end
+    assert page.has_content?("The Departed")
   end
 
   test 'page links to new film path' do

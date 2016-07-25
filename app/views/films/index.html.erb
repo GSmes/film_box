@@ -3,11 +3,31 @@
 
 <h5>Welcome, <%= current_user.username %></h5>
 
-<% @films.each do |film| %>
-  <div class='film'>
-    <h5> <%= link_to film.title, film_path(film) %> </h5>
-    <p> <%= film.description %> </p>
+<div class="row">
+    <% @films.each do |film| %>
+  <div class="col s12 m6">
+    <div class='card medium'>
+      <div class="card-image">
+        <% if film.images.first %>
+          <a href="<%= film_path(film) %>"><img src="<%= film.images.first.link %>" alt="" /></a>
+        <% else %>
+          <a href="<%= film_path(film) %>"><%= image_tag 'img-placeholder.jpg' %></a>
+        <% end %>
+        <span class="card-title"><%= link_to film.title, film_path(film), class: 'white-text' %> </span>
+      </div>
+      <div class="card-content black-text">
+        <p> <%= film.description[0..140] + '...' %> </p>
+      </div>
+      <div class="card-action">
+        <%= link_to 'EDIT', edit_film_path(film) %>
+        <%= link_to 'DELETE', film_path(film), method: :delete %>
+      </div>
+    </div>
   </div>
-<% end %>
-
-<%= link_to "Create Film", new_film_path %>
+    <% end %>
+</div>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <a href='<%= new_film_path %>' class="btn-floating btn-large red" id="Create Film">
+    <i class="large material-icons">add</i>
+  </a>
+</div>

@@ -13,7 +13,7 @@ class FilmsIndexTest < ActionDispatch::IntegrationTest
   end
 
   test 'page links to new film path' do
-    create_user
+    login_user
     create_film
 
     visit films_path
@@ -34,7 +34,7 @@ class FilmsIndexTest < ActionDispatch::IntegrationTest
   end
 
   def create_film
-    @admin.films.create(title: 'The Departed', description: 'So much death')
+    @user.films.create(title: 'The Departed', description: 'So much death')
   end
 
 end

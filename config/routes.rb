@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'films#index'
+  root to: 'sessions#new'
 
   resources :users, only: [:new, :create, :show]
 
