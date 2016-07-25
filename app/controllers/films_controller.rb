@@ -1,4 +1,4 @@
-class IdeasController < ApplicationController
+class FilmsController < ApplicationController
   before_action :set_user
   before_action :set_film, only: [:show, :destroy, :edit, :update]
 
