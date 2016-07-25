@@ -54,7 +54,7 @@ class IdeasController < ApplicationController
   end
 
   def film_params
-    params.require(:film).permit(:title, :description)
+    params.require(:film).permit(:title, :description, :genre_id)
   end
 
 end
